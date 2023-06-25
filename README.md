@@ -1,80 +1,54 @@
 # RestoPWA
 
-## Progressive Web Apps
+## Progressive Web Apps + Testing and Optimized
 
 ⏲️Time Line  
-📆Day1 24 May 21.00 - 23.30 : Progress 1  
-📆Day2 25 May 21.00 - 23:45 : Finishing Progres 1 & Mulai Progress 2  
-📆Day3 26 May 20.00 - 23.15 : Finishing Progress 2 (-styling & fav btn)  
-📆Day4 27 May 21.00 - 23.10 : Adding Style to review section, Set Web App Manifect, Service Worker, Cache API and Cache Service Worker.  
-📆Day5 28 May 20.30 - 22.42 : Using Workbox for Service Worker, Using IndexDB to store loved restaurants. Need to correct offline capabilities tomorrow.  
-📆Day6 29 May 21.30 - 00.05 : Styling Main Page. Offline Capabilities [OK].  Next styling Detail Page.  
-📆Day7 30 May 21.30 - 23.54 : Styling Detail Page.  
-📆Day8 31 May 22.00 - 00.33 : Add Scroll Up Button initiator (used to scroll to the top of the page faster). added keyboard accessibility function.  
-📆Day9 04 Jun 20.00 - 22.50 : Add Consumer Review. and fix some styling.  
-📆Day10 05 Jun 21.00 - 00.01 : Add Loading indicator and 404 Page Display when Response API is failed (or 404).  
-📆Day11 07 Jun 22.30 - 00.30 : Create Custom Element HTML Native for Hero Element and Review Section. Next Create Custom Element for RestaurantList.  
-📆Day12 08 Jun 20.30 - 23.00 : Re-Setting Hero Element and styling Detail pagae.
-
+📆Day1 25 June 19.00 - : Progress 1 Integration Test
 
 Fitur yang harus ada pada aplikasi:
 
-⚪ 1. Halaman Utama (Daftar Restoran) - 📆Day 1  
+⚪ 1. Integration Test - 📆Day 1  
 &ensp; Syarat:  
-&emsp; ☑️ Menampilkan daftar restoran yang datanya bersumber dari API https://restaurant-api.dicoding.dev/. Silakan lihat dokumentasinya pada halaman tersebut.  
-&emsp; ☑️Wajib menampilkan nama, gambar dan minimal salah satu diantara kota, rating, dan atau deskripsi pada restoran.  
-&emsp; ☑️Terdapat tautan/CTA yang mengarah ke detail restoran pada tiap itemnya.  
-&emsp; ☑️Hero elemen tetap dipertahankan.
+&emsp; 🟨 Menerapkan integration test untuk fungsi menyukai dan batal menyukai restoran.
 
-⚪ 2. Halaman Detail Restoran - 📆Day 2  
+⚪ 2. End to End Test  
 &ensp; Syarat:  
- &emsp; ☑️Menampilkan detail dari restoran yang dipilih dari halaman utama (daftar restoran) atau halaman favorit restoran.  
- &emsp;&ensp; Pada halaman detail restoran harus terdapat:  
- &emsp; ☑️Nama restoran  
- &emsp; ☑️Gambar  
- &emsp; ☑️Alamat  
- &emsp; ☑️Kota  
- &emsp; ☑️Deskripsi  
- &emsp; ☑️Menu Makanan  
- &emsp; ☑️Menu Minuman  
- &emsp; ☑️Customer Reviews  
- &emsp; ☑️Styling  
- &emsp; ☑️Terdapat tombol favorite untuk memasukkan atau menghapus restoran favorit dari database (gunakan IndexedDB).
+ &emsp; 🟨 Menerapkan End to End Test dengan skenario:  
+ &emsp; 🟧 Menyukai salah satu restoran.  
+ &emsp; 🟧 Batal menyukai restoran tersebut.
 
-⚪ 3.Halaman Daftar Restoran Favorit - 📆Day 5  
+⚪ 3.Image Optimization  
 &ensp; Syarat:  
-&emsp; ☑️Halaman Daftar Restoran dapat diakses melalui menu navigasi favorit.  
-&emsp; ☑️Menampilkan restoran yang difavoritkan oleh pengguna (data diambil dari indexedDB).  
-&emsp; ☑️Wajib menampilkan nama, gambar dan minimal salah satu diantara kota, rating, dan atau deskripsi pada restoran.  
-&emsp; ☑️Terdapat tautan/CTA yang mengarah ke detail restoran pada tiap itemnya.
+&emsp; 🟧 Melakukan kompresi terhadap gambar hero yang digunakan. Ukuran gambar harus di bawah 200kb.  
+&emsp; 🟧 Menerapkan teknik image responsive pada gambar hero. Resolusi gambar pada layar seluler dan desktop harus berbeda.  
+&emsp; 🟧 Menerapkan teknik lazy loading pada gambar daftar restoran yang ditampilkan.
 
-⚪ 4.Native Capability - 📆Day 6  
+⚪ 4.Bundle Optimization
 &ensp; Syarat:  
-&emsp;☑️Aplikasi dapat diakses dalam keadaan offline tanpa ada aset yang gagal dimuat, termasuk data yang didapatkan dari API. Anda bebas menggunakan strategi caching apapun, bahkan menggunakan workbox.  
-&emsp; ☑️Aplikasi harus menampilkan icon Add to Home Screen.  
-&emsp; ☑️Aplikasi memiliki custom icon yang ditampilkan pada home screen dan splash screen.  
-  
-⚪ 5.Code Quality  - 📆Day 1 and Day 7  
-&ensp;Syarat:  
-&emsp;☑️Menggunakan ESLint sebagai linter ketika menuliskan kode JavaScript. Harap lampirkan berkas konfigurasi ESLint ya.  
-&emsp;☑️Menerapkan salah satu style guide baik itu Google JavaScript Code Style, AirBnB JavaScript Code Style, atau StandardJS Code Style.  
-&emsp;☑️Periksa kembali sebelum mengirimkan submission, apakah project yang Anda kirimkan sesuai dengan kriteria yang ditetapkan atau tidak, ditandai dengan tidak adanya satupun error ketika menjalankan eslint.  📆Day12  
-  
-⚪ 6.Pertahankan syarat yang ada pada submission sebelumnya. - 📆Day 8  
-☑️Seperti responsibilitas tampilan, aksesibilitas pada website, appbar, footer dan sebagainya.  
+&emsp; 🟧 Memasang bundle analyzer pada proyek submission.  
+&emsp; 🟧 Gunakan teknik Code Splitting untuk memisahkan vendor code dari kode asli yang Anda tuliskan.
 
-🔥The Challenge :  
-  
-&emsp;☑️ 1. Tambahkan fitur untuk memberikan consumer review baru pada halaman detail. Silakan simak caranya pada dokumentasi API (Gunakan testing key untuk api key-nya).  -📆Day10  
-&emsp;☑️  2. Alangkah baiknya bila Anda menerapkan Web Component secara native menggunakan Custom Element. -📆Day 11 and 12  
-&emsp;☑️ 3. Tambahkan indikator loading ketika data sedang dimuat dari server dan tampilkanlah keterangan/halaman bila request yang dilakukan gagal.  -📆Day10  
-  
-&emsp;⚪ : Judul Kriteria Pengerjaan    
+⚪ 5.Pertahankan syarat yang ada pada submission sebelumnya.
+&ensp; Syarat:  
+&emsp; 🟧 Seperti penerapan PWA, Seperti penerapan PWA, responsibilitas tampilan, aksesibilitas pada website dan sebagainya.
+
+🔥The Challenge :
+
+&emsp;🔴 1. Menuliskan test case secara lengkap, mulai dari kasus positif hingga kasus negatif. Pastikan test case yang dijalankan berhasil.  
+&emsp;🔴 2. Menerapkan End to End test pada skenario lain di luar yang sudah ditentukan. Pastikan test case yang dijalankan berhasil.  
+&emsp; Contoh: bila aplikasi terdapat fitur customer review, lakukan End to End test pada fitur tersebut.
+
+&emsp;🔴 3. Menerapkan optimasi lain di luar dari optimasi yang menjadi persyaratan. Contoh, Anda bisa menerapkan pendekatan skeleton UI, minify/uglify CSS.  
+&emsp;🔴 4. Mendeploy hasil web app yang Anda kerjakan ke third-party hosting. Seperti Firebase Hosting, Netlify, Heroku, Github Pages, atau yang lainnya. Serta, memperhatikan metrik Web Vitals dengan nilai:  
+&emsp; FCP < 2.5 detik  
+&emsp; FID/TBT < 100 ms  
+&emsp; CLS < 0.1
+
+&emsp;⚪ : Judul Kriteria Pengerjaan  
 &emsp;☑️ : Sudah selesai dikerjakan  
 &emsp;🟨 : Dalam proses pengerjaan  
-&emsp;🟧 : Akan dikerjakan selanjutnya  
-  
+&emsp;🟧 : Akan dikerjakan selanjutnya
+
 &emsp; 🔴 : Challenge belum terlaksana  
 &emsp; 🟡 : Challenge sedang dikerjakan  
-&emsp; 🟢 : Challenge sudah terlaksana  
-
+&emsp; 🟢 : Challenge sudah terlaksana
