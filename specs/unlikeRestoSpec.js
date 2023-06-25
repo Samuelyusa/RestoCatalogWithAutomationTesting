@@ -1,4 +1,4 @@
-import LikeButtonInitiator from '../src/scripts/utils/like-button-presenter';
+import LikeButtonPresenter from '../src/scripts/utils/like-button-presenter';
 import FavoriteRestaurantIdb from '../src/scripts/data/favorite-restaurant-idb';
 import * as TestFactories from './helpers/testFactories';
 

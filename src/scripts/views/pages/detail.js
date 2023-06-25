@@ -6,6 +6,7 @@ import API_ENDPOINT from '../../globals/api-endpoint';
 import '../../component/reviewList';
 import '../../component/heroComp';
 import CONFIG from '../../globals/config';
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 
 const Detail = {
 	async render() {
@@ -75,6 +76,7 @@ const Detail = {
 
 		LikeButtonPresenter.init({
 			likeButtonContainer: document.querySelector('#likeButtonContainer'),
+			favoriteResto: FavoriteRestaurantIdb,
 			restaurant,
 			// : {
 			// id: restaurant.id,
