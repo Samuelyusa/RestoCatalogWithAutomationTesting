@@ -1,7 +1,7 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantAPISource from '../../data/restaurant-source';
 import { createrestaurantDetailTemplate, createReviewTemplate, displayNewReviewTemplate } from '../templates/template-creator';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
 import API_ENDPOINT from '../../globals/api-endpoint';
 import '../../component/reviewList';
 import '../../component/heroComp';
@@ -73,7 +73,7 @@ const Detail = {
 
 		renderReview(reviewResto);
 
-		LikeButtonInitiator.init({
+		LikeButtonPresenter.init({
 			likeButtonContainer: document.querySelector('#likeButtonContainer'),
 			restaurant,
 			// : {
