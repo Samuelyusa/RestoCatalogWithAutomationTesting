@@ -32,5 +32,6 @@
         "camelcase":2,
         "consistent-return":0,
         "no-useless-concat": 0
-    }
+    },
+    "plugins": ["jasmine"]
 }
