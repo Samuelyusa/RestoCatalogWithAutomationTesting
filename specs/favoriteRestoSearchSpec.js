@@ -17,7 +17,7 @@ describe('Searching restaurant', () => {
         <div class="restaurant-result-container">
           <ul class="restaurants">
             <li class="restaurant">
-              <span class="restaurant__title">Film Satu</span>
+              <span class="restaurant__title">Restaurant Satu</span>
             </li>
           </ul>
         </div>
@@ -79,4 +79,39 @@ describe('Searching restaurant', () => {
     expect(document.querySelectorAll('.restaurant__title').item(0).textContent)
         .toEqual('-');
   });
+
+  it('should show the restaurants found by Favorite Restaurants', (done) => {
+    document.getElementById('restaurant-search-container')
+      .addEventListener('restaurants:searched:updated', () => {
+        expect(document.querySelectorAll('.restaurant').length).toEqual(3);
+        done()
+      });
+    
+    FavoriteRestaurantIdb.searchRestaurant.withArgs('restaurant a').and.returnValues([
+      { id: 111, title: 'restaurant a' },
+      { id: 112, title: 'restaurant b' },
+      { id: 113, title: 'restaurant c' },
+    ]);
+
+    searchRestaurant('restaurant a');
+  });
+
+  it('should show the name of the restaurants found by Favorite Restaurants', (done) => {
+  document.getElementById('restaurant-search-container').addEventListener('restaurants:searched:updated', () => {
+    const restaurantTitles = document.querySelectorAll('.restaurant__title');
+    expect(restaurantTitles.item(0).textContent).toEqual('restaurant a');
+    expect(restaurantTitles.item(1).textContent).toEqual('restaurant b');
+    expect(restaurantTitles.item(2).textContent).toEqual('restaurant c');
+
+    done();
+  });
+
+  FavoriteRestaurantIdb.searchRestaurant.withArgs('restaurant a').and.returnValues([
+    { id: 111, title: 'restaurant a' },
+    { id: 112, title: 'restaurant b' },
+    { id: 113, title: 'restaurant c' },
+  ]);
+
+  searchRestaurant('restaurant a');
+});
 });
