@@ -34,13 +34,13 @@ const FavoriteRestaurantIdb = {
 
 	async searchRestaurant(query) {
 		return (await this.getAllRestaurants()).filter((restaurant) => {
-			console.log(restaurant);
+			
       const loweredCaseRestaurantTitle = (restaurant.title || '-').toLowerCase();
       const jammedRestaurantTitle = loweredCaseRestaurantTitle.replace(/\s/g, '');
       
 			const loweredCaseQuery = query.toLowerCase();
       const jammedQuery = loweredCaseQuery.replace(/\s/g, '');
-			console.log(jammedRestaurantTitle.indexOf(jammedQuery) !== -1);
+			
 			return jammedRestaurantTitle.indexOf(jammedQuery) !== -1;
     });
   },
