@@ -4,17 +4,18 @@
 
 ⏲️Time Line  
 📆Day1 25 June 19.00 - : Progress 1 Integration Test
+📆Day5 25 June 21.00 - : Progress 2 End to End Test Fase 1
 
 Fitur yang harus ada pada aplikasi:
 
 ⚪ 1. Integration Test - 📆Day 1  
 &ensp; Syarat:  
-&emsp; 🟨 Menerapkan integration test untuk fungsi menyukai dan batal menyukai restoran.
+&emsp; ☑️ Menerapkan integration test untuk fungsi menyukai dan batal menyukai restoran.
 
-⚪ 2. End to End Test  
+⚪ 2. End to End Test 📆Day 2- 5  
 &ensp; Syarat:  
  &emsp; 🟨 Menerapkan End to End Test dengan skenario:  
- &emsp; 🟧 Menyukai salah satu restoran.  
+ &emsp; ☑️ Menyukai salah satu restoran.  
  &emsp; 🟧 Batal menyukai restoran tersebut.
 
 ⚪ 3.Image Optimization  
