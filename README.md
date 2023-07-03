@@ -3,8 +3,8 @@
 ## Progressive Web Apps + Testing and Optimized
 
 ⏲️Time Line  
-📆Day1 25 June 19.00 - : Progress 1 Integration Test
-📆Day5 25 June 21.00 - : Progress 2 End to End Test Fase 1
+📆Day1 25 June 19.00 - : Progress 1 Integration Test  
+📆Day5 25 June 21.00 - : Progress 2 End to End Test Fase 1  
 
 Fitur yang harus ada pada aplikasi:
 
