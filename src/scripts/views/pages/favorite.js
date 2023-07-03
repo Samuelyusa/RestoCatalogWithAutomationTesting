@@ -1,7 +1,7 @@
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 import { createrestaurantItemTemplate } from '../templates/template-creator';
 import FavoriteRestaurantSearchView from './liked-resto/favorite-resto-search-view';
-import FavoriteRestoSearchPresenter from './liked-resto/favorite-resto-search-presenter'; 
+import FavoriteRestoSearchPresenter from './liked-resto/favorite-resto-search-presenter';
 import FavoriteRestaurantShowPresenter from './liked-resto/favorite-resto-show-presenter'; 
 
 const view = new FavoriteRestaurantSearchView();
@@ -20,7 +20,7 @@ const Favorite = {
 
 	async afterRender() {
 		new FavoriteRestaurantShowPresenter({ view, favoriteRestaurants: FavoriteRestaurantIdb });
-		new FavoriteRestaurantShowPresenter({ view, favoriteRestaurants: FavoriteRestaurantIdb });
+		new FavoriteRestoSearchPresenter({ view, favoriteRestaurants: FavoriteRestaurantIdb });
 		
 		// const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
 		// const FavContainer = document.querySelector('.content');

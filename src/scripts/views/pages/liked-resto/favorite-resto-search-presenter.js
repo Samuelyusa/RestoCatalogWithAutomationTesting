@@ -1,8 +1,8 @@
 class FavoriteRestoSearchPresenter {
   constructor({ favoriteRestaurant, view }) {
     this._view = view;
-    this._listenToSearchRequestByUser();
     this._favoriteRestaurant = favoriteRestaurant;
+    this._listenToSearchRequestByUser();
   }
 
   _listenToSearchRequestByUser() {
@@ -15,7 +15,7 @@ class FavoriteRestoSearchPresenter {
     this._latestQuery = latestQuery.trim();
 
     let foundRestaurants;
-    if (this.latestQuery.length > 0) {
+    if (this.latestQuery?.length > 0) {
       foundRestaurants = await this._favoriteRestaurant.searchRestaurant(this._latestQuery);
     } else {
       foundRestaurants = await this._favoriteRestaurant.getAllRestaurants();
