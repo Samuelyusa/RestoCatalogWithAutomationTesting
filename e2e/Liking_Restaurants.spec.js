@@ -23,8 +23,7 @@ Scenario('liking one restaurant', ({I}) => {
   I.seeElement('#likeButton');
   I.click('#likeButton');
 
-  
-
-
+  I.amOnPage('/#/favorite');
+  I.seeElement('.restaurant-item');
 
 });
