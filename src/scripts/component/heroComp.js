@@ -9,7 +9,7 @@ class HeroComp extends HTMLElement {
 	render() {
 		this.innerHTML = `
 			<picture>
-				<source media="(max-width: 600px)" srcset="${this.srcset}">
+				<source media="(max-width: 600px)" srcset="${this.srcset}" type="image/webp">
 				<img src="${this.src}" id="hero"
 				alt="${this.alt}">
       </picture>
