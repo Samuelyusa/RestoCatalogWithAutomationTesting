@@ -37,6 +37,36 @@ Scenario('liking one restaurant', async ({I}) => {
 
 });
 
+Scenario('unliking one restaurant', async ({ I }) => {
+  I.see('Restaurant tidak ditemukan', '.restaurant-item__not__found');
+
+  I.amOnPage('/');
+
+  I.waitForElement('.restaurant-item', 5);
+  I.seeElement('.restaurant-item');
+
+  I.waitForClickable('.restaurant__title a',6);
+  I.click(locate('.restaurant__title a').first());
+
+  I.waitForElement('#likeButton', 5);
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/favorite');
+  I.seeElement('.restaurant-item');
+
+  I.waitForClickable('.restaurant__title a',6);
+  I.click(locate('.restaurant__title a').first());
+
+  I.waitForElement('#likeButton', 5);
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/favorite');
+  I.see('Restaurant tidak ditemukan', '.restaurant-item__not__found');
+
+});
+
 Scenario('searching restaurants', async ({ I }) => {
   I.see('Restaurant tidak ditemukan', '.restaurant-item__not__found');
 
