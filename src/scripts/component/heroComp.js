@@ -1,17 +1,18 @@
 class HeroComp extends HTMLElement {
 	connectedCallback() {
 		this.src = this.getAttribute('src') || '';
+		this.srcset = this.getAttribute('srcset') || '';
 		this.alt = this.getAttribute('alt') || 'Restaurant Catalogue Main Image';
 		this.render();
 	}
 
 	render() {
 		this.innerHTML = `
-            <img
-                id="hero"
-                src="${this.src}"
+			<picture>
+				<source media="(max-width: 600px)" srcset="${this.srcset}">
+				<img src="${this.src}" id="hero"
 				alt="${this.alt}">
-            </img>
+      </picture>
             `;
 	}
 
@@ -21,7 +22,7 @@ class HeroComp extends HTMLElement {
 	}
 
 	static get observedAttributes() {
-		return ['src', 'alt'];
+		return ['src','srcset','alt'];
 	}
 }
 

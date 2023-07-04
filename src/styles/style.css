@@ -159,7 +159,8 @@ hero-comp{
 
 #hero{
     width: 100vw;
-    position: absolute;
+    height: auto;
+    /* position: absolute; */
 }
 
 /*

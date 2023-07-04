@@ -66,8 +66,13 @@ const displayNewReviewTemplate = () => `
 const createrestaurantItemTemplate = (restaurant) => `
     <div class="restaurant-item">
         <div class="restaurant-item__header">
-        <img class="restaurant-item__header__poster" alt="${restaurant.name || '-'}"
-            src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
+        <picture>
+            <source media="(max-width: 1024px)" srcset="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
+            <img src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}"
+                alt="${restaurant.name || '-'}"
+                class="restaurant-item__header__poster">
+        </picture>
+        
         <div class="restaurant-item__header__rating">
             <span><img src="${CONFIG.ICON}/star-rate.png" class="star-rate"></span><span class="restaurant-item__header__rating__score">${restaurant.rating || '-'}</span>
         </div>
