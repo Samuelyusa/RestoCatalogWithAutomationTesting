@@ -1,3 +1,9 @@
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
+const START = 10;
+const NUMBER_OF_IMAGES = 100;
+
 import CONFIG from '../../globals/config';
 
 const createrestaurantDetailTemplate = (restaurant) => `
@@ -67,10 +73,10 @@ const createrestaurantItemTemplate = (restaurant) => `
     <div class="restaurant-item">
         <div class="restaurant-item__header">
         <picture>
-            <source media="(max-width: 1024px)" srcset="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
-            <img src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}"
+            <source media="(max-width: 1024px)" data-srcset="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
+            <img data-src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}"
                 alt="${restaurant.name || '-'}"
-                class="restaurant-item__header__poster">
+                class="restaurant-item__header__poster lazyload">
         </picture>
         
         <div class="restaurant-item__header__rating">
