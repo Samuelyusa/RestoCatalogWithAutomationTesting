@@ -53,6 +53,8 @@ Scenario('unliking one restaurant', async ({ I }) => {
   I.click('#likeButton');
 
   I.amOnPage('/#/favorite');
+
+  I.waitForElement('.restaurant-item', 5);
   I.seeElement('.restaurant-item');
 
   I.waitForClickable('.restaurant__title a',6);
@@ -107,4 +109,40 @@ Scenario('searching restaurants', async ({ I }) => {
     const visibleTitle = await I.grabTextFrom(locate('.restaurant__title').at(index + 1));
     assert.strictEqual(title, visibleTitle);
   });
+});
+
+Scenario('Add one customer review', async ({ I }) => {
+  I.see('Restaurant tidak ditemukan', '.restaurant-item__not__found');
+
+  I.amOnPage('/');
+
+  I.waitForElement('.restaurant-item', 5);
+  I.seeElement('.restaurant-item');
+
+  I.waitForClickable('.restaurant__title a',6);
+  I.click(locate('.restaurant__title a').first());
+
+  I.waitForElement('#addReviewName', 5);
+  I.seeElement('#addReviewName');
+
+  const customerName = "Robert Saja";
+  const customerReview = "Saya suka sekali!";
+
+  I.fillField('#addReviewName', customerName);
+
+  I.seeElement('#addReviewText');
+  I.fillField('#addReviewText', customerReview);
+
+  I.waitForClickable('#submit-btn',5);
+  I.click('#submit-btn');
+  
+  I.scrollPageToBottom('#restaurant__Newreview');
+  I.seeElement('#restaurant__Newreview');
+  I.waitForElement(locate('.restaurant__author').last(), 1);
+  I.seeElement(locate('.restaurant__author').last());
+  const newCustomerName = await I.grabTextFrom(locate('.restaurant__author').last())
+  const newCustomerReview = await I.grabTextFrom(locate('.restaurant__message').last())
+
+  assert.strictEqual(customerName, newCustomerName);
+  assert.strictEqual(customerReview, newCustomerReview);
 });
