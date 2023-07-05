@@ -36,6 +36,8 @@ class App {
 			this._content.innerHTML = await page.render();
 			await page.afterRender();
 
+			
+
 			const skipLinkElem = document.querySelector('.skip-link');
 			skipLinkElem.addEventListener('click', (event) => {
 				event.preventDefault();
@@ -44,6 +46,10 @@ class App {
 
 			setTimeout(() => {
 				loaderContainer.style.display = 'none';
+				const allSkeleton = document.querySelectorAll('.skeleton')
+				allSkeleton.forEach(item => {
+					item.classList.remove('skeleton')
+			});
 			}, 2000);
 		} catch (error) {
 			console.error(error);
