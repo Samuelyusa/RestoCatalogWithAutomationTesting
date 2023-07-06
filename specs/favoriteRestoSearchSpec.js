@@ -4,7 +4,7 @@ import FavoriteRestaurantSearchView from "../src/scripts/views/pages/liked-resto
 
 describe('Searching restaurant', () => {
   let presenter;
-  let favoriteRestaurant;
+  let favoriteRestaurants;
   let view;
 
   const searchRestaurant = (query) => {
@@ -19,8 +19,8 @@ describe('Searching restaurant', () => {
   };
 
   const constructPresenter = () => {
-    favoriteRestaurant = spyOnAllFunctions(FavoriteRestaurantIdb);
-    presenter = new FavoriteRestoSearchPresenter({ favoriteRestaurant, view });
+    favoriteRestaurants = spyOnAllFunctions(FavoriteRestaurantIdb);
+    presenter = new FavoriteRestoSearchPresenter({ favoriteRestaurants, view });
   };
 
   beforeEach(() => {
@@ -38,7 +38,7 @@ describe('Searching restaurant', () => {
     it('should ask the model to search for liked restaurants', () => {
       searchRestaurant('restaurant a');
 
-      expect(favoriteRestaurant.searchRestaurant)
+      expect(favoriteRestaurants.searchRestaurant)
         .toHaveBeenCalledWith('restaurant a');
     });
 
@@ -68,7 +68,7 @@ describe('Searching restaurant', () => {
         done();
       });
     
-      favoriteRestaurant.searchRestaurant.withArgs('restaurant a').and.returnValues([
+      favoriteRestaurants.searchRestaurant.withArgs('restaurant a').and.returnValues([
         { id: 111 },
       ]);
     
@@ -85,7 +85,7 @@ describe('Searching restaurant', () => {
         done();
       });
 
-      favoriteRestaurant.searchRestaurant.withArgs('restaurant a').and.returnValues([
+      favoriteRestaurants.searchRestaurant.withArgs('restaurant a').and.returnValues([
         { id: 111, name: 'restaurant a' },
         { id: 112, name: 'restaurant b' },
         { id: 113, name: 'restaurant c' },
@@ -112,7 +112,7 @@ describe('Searching restaurant', () => {
 
     it('should show all favorite restaurants', () => {
       searchRestaurant('    ');
-      expect(favoriteRestaurant.getAllRestaurants)
+      expect(favoriteRestaurants.getAllRestaurants)
         .toHaveBeenCalled();
     });
   });
@@ -124,7 +124,7 @@ describe('Searching restaurant', () => {
           done();
           });
 
-      favoriteRestaurant.searchRestaurant.withArgs('restaurant a').and.returnValues([]);
+      favoriteRestaurants.searchRestaurant.withArgs('restaurant a').and.returnValues([]);
 
       searchRestaurant('restaurant a');
     });
@@ -134,7 +134,7 @@ describe('Searching restaurant', () => {
         expect(document.querySelectorAll('.restaurant').length).toEqual(0);
         done();
       });
-      favoriteRestaurant.searchRestaurant.withArgs('restaurant a').and.returnValues([]);
+      favoriteRestaurants.searchRestaurant.withArgs('restaurant a').and.returnValues([]);
       searchRestaurant('restaurant a');
     });
   });
