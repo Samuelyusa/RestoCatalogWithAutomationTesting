@@ -32,6 +32,7 @@ const Detail = {
 		const heroUrl = `${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}`;
 		const heroRestoName = `Restaurant ${restaurant.name}`;
 		heroImage.setAttribute('src', heroUrl);
+		heroImage.setAttribute('srcset', heroUrl);
 		heroImage.setAttribute('style', 'display:block');
 		document.getElementById('hero').alt = heroRestoName;
 
