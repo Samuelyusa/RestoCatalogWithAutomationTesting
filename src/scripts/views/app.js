@@ -47,10 +47,18 @@ class App {
 			setTimeout(() => {
 				loaderContainer.style.display = 'none';
 				const allSkeleton = document.querySelectorAll('.skeleton')
+				const allSkeletonText = document.querySelectorAll('.skeleton-text')
+				const allSkeletonTitle = document.querySelectorAll('.skeleton-title')
+				allSkeletonText.forEach(item => {
+					item.classList.remove('skeleton-text')
+				});
+				allSkeletonTitle.forEach(item => {
+					item.classList.remove('skeleton-title')
+				});
 				allSkeleton.forEach(item => {
 					item.classList.remove('skeleton')
-			});
-			}, 2000);
+				});
+			}, 1500);
 		} catch (error) {
 			console.error(error);
 			return document.body.innerHTML = `
