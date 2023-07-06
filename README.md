@@ -28,8 +28,8 @@ Fitur yang harus ada pada aplikasi:
 
 ⚪ 4.Bundle Optimization  
 &ensp; Syarat:  
-&emsp; 🟧 Memasang bundle analyzer pada proyek submission.  
-&emsp; 🟧 Gunakan teknik Code Splitting untuk memisahkan vendor code dari kode asli yang Anda tuliskan.
+&emsp; ☑️ Memasang bundle analyzer pada proyek submission.  
+&emsp; ☑️ Gunakan teknik Code Splitting untuk memisahkan vendor code dari kode asli yang Anda tuliskan.
 
 ⚪ 5.Pertahankan syarat yang ada pada submission sebelumnya.  
 &ensp; Syarat:  
@@ -37,12 +37,12 @@ Fitur yang harus ada pada aplikasi:
 
 🔥The Challenge :
 
-&emsp;🔴 1. Menuliskan test case secara lengkap, mulai dari kasus positif hingga kasus negatif. Pastikan test case yang dijalankan berhasil.  
-&emsp;🔴 2. Menerapkan End to End test pada skenario lain di luar yang sudah ditentukan. Pastikan test case yang dijalankan berhasil.  
+&emsp;🟢 1. Menuliskan test case secara lengkap, mulai dari kasus positif hingga kasus negatif. Pastikan test case yang dijalankan berhasil.  
+&emsp;🟢 2. Menerapkan End to End test pada skenario lain di luar yang sudah ditentukan. Pastikan test case yang dijalankan berhasil.  
 &emsp; Contoh: bila aplikasi terdapat fitur customer review, lakukan End to End test pada fitur tersebut.
 
-&emsp;🔴 3. Menerapkan optimasi lain di luar dari optimasi yang menjadi persyaratan. Contoh, Anda bisa menerapkan pendekatan skeleton UI, minify/uglify CSS.  
-&emsp;🔴 4. Mendeploy hasil web app yang Anda kerjakan ke third-party hosting. Seperti Firebase Hosting, Netlify, Heroku, Github Pages, atau yang lainnya. Serta, memperhatikan metrik Web Vitals dengan nilai:  
+&emsp;🟢 3. Menerapkan optimasi lain di luar dari optimasi yang menjadi persyaratan. Contoh, Anda bisa menerapkan pendekatan skeleton UI, minify/uglify CSS.  
+&emsp;🟢 4. Mendeploy hasil web app yang Anda kerjakan ke third-party hosting. Seperti Firebase Hosting, Netlify, Heroku, Github Pages, atau yang lainnya. Serta, memperhatikan metrik Web Vitals dengan nilai:  
 &emsp; FCP < 2.5 detik  
 &emsp; FID/TBT < 100 ms  
 &emsp; CLS < 0.1
