@@ -80,12 +80,12 @@ const createrestaurantItemTemplate = (restaurant) => `
         </picture>
         
         <div class="restaurant-item__header__rating">
-            <span><img src="${CONFIG.ICON}/star-rate.png" class="star-rate skeleton"></span><span class="restaurant-item__header__rating__score">${restaurant.rating || '-'}</span>
+            <span><img src="${CONFIG.ICON}/star-rate.png" alt="" class="star-rate skeleton"></span><span class="restaurant-item__header__rating__score">${restaurant.rating || '-'}</span>
         </div>
         </div>
         <div class="restaurant-item__content">
         <h3 class="restaurant__title skeleton"><a href="/#/detail/${restaurant.id}">${restaurant.name || '-'}</a></h3>
-        <p class="skeleton skeleton">${restaurant.description || '-'}</p>
+        <p class="skeleton">${restaurant.description || '-'}</p>
         </div>
     </div>`;
 
