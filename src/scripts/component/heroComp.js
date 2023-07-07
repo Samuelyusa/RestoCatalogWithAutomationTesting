@@ -22,7 +22,7 @@ class HeroComp extends HTMLElement {
 	}
 
 	static get observedAttributes() {
-		return ['src','srcset','alt'];
+		return ['src', 'srcset', 'alt'];
 	}
 }
 
