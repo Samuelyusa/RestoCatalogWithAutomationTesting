@@ -158,10 +158,10 @@ hero-comp{
 }
 
 #hero{
-    /* width: 100vw; */
-    /* height: 65vw; */
-    width: 375px;
-    height: 250px;
+    width: 100vw;
+    height: auto;
+    /* width: 375px; */
+    /* height: 250px; */
     /* position: absolute; */
 }
 

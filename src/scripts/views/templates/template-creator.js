@@ -1,10 +1,10 @@
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
+import CONFIG from '../../globals/config';
+
 const START = 10;
 const NUMBER_OF_IMAGES = 100;
-
-import CONFIG from '../../globals/config';
 
 const createrestaurantDetailTemplate = (restaurant) => `
     <img tabindex="0" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}"

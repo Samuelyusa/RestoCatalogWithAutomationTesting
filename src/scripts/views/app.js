@@ -36,8 +36,6 @@ class App {
 			this._content.innerHTML = await page.render();
 			await page.afterRender();
 
-			
-
 			const skipLinkElem = document.querySelector('.skip-link');
 			skipLinkElem.addEventListener('click', (event) => {
 				event.preventDefault();
@@ -46,17 +44,17 @@ class App {
 
 			setTimeout(() => {
 				loaderContainer.style.display = 'none';
-				const allSkeleton = document.querySelectorAll('.skeleton')
-				const allSkeletonText = document.querySelectorAll('.skeleton-text')
-				const allSkeletonTitle = document.querySelectorAll('.skeleton-title')
-				allSkeletonText.forEach(item => {
-					item.classList.remove('skeleton-text')
+				const allSkeleton = document.querySelectorAll('.skeleton');
+				const allSkeletonText = document.querySelectorAll('.skeleton-text');
+				const allSkeletonTitle = document.querySelectorAll('.skeleton-title');
+				allSkeletonText.forEach((item) => {
+					item.classList.remove('skeleton-text');
 				});
-				allSkeletonTitle.forEach(item => {
-					item.classList.remove('skeleton-title')
+				allSkeletonTitle.forEach((item) => {
+					item.classList.remove('skeleton-title');
 				});
-				allSkeleton.forEach(item => {
-					item.classList.remove('skeleton')
+				allSkeleton.forEach((item) => {
+					item.classList.remove('skeleton');
 				});
 			}, 1500);
 		} catch (error) {
