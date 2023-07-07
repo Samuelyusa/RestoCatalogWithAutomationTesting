@@ -109,6 +109,9 @@ module.exports = {
 			openAnalyzer: false,
 			analyzerMode: 'static',
 		}),
-		new MiniCssExtractPlugin(),
+		new MiniCssExtractPlugin({
+			// filename: '/src/styles/style.css',
+			// filename: '/src/styles/responsive.css'
+		}),
 	],
 };
